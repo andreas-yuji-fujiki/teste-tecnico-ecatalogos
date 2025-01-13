@@ -18,20 +18,15 @@ import { ProductData } from '../../types/types';
 
 // function
 const CartSlider: React.FC = () => {
-    // use states
     const [error, setError] = useState<string | null>(null);
     const [products, setProducts] = useState<ProductData | null>(null);
 
-    const [activeCategoryIndex, setActiveCategoryIndex] = useState<number>(0); // active index
+    const [activeCategoryIndex, setActiveCategoryIndex] = useState<number>(0);
     const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0);
 
-    // Contagem de itens por categoria
     const [categoryCounts, setCategoryCounts] = useState<Map<string, number>>(new Map());
-
-    // swiper ref
     const swiperRef = useRef<SwiperType | null>(null);
 
-    // fetching dumps
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -42,7 +37,6 @@ const CartSlider: React.FC = () => {
                 const data: ProductData = await response.json();
                 setProducts(data);
 
-                // Contagem de itens por categoria
                 const counts = new Map<string, number>();
                 data.products.forEach(product => {
                     counts.set(product.category, (counts.get(product.category) || 0) + 1);
@@ -59,17 +53,15 @@ const CartSlider: React.FC = () => {
         fetchData();
     }, []);
 
-    // Extraindo categorias dos produtos
     const categories = products ? Array.from(new Set(products.products.map(product => product.category))) : [];
 
-    // Navegação entre as categorias com comportamento cíclico
     const navigateToCategory = (direction: 'prev' | 'next') => {
         if (!products || !swiperRef.current) return;
 
         const newIndex =
             direction === 'prev'
-                ? (activeCategoryIndex - 1 + categories.length) % categories.length // Navegação cíclica para "Anterior"
-                : (activeCategoryIndex + 1) % categories.length; // Navegação cíclica para "Próxima"
+                ? (activeCategoryIndex - 1 + categories.length) % categories.length 
+                : (activeCategoryIndex + 1) % categories.length;
 
         if (newIndex !== activeCategoryIndex) {
             const newCategory = categories[newIndex];
@@ -82,11 +74,8 @@ const CartSlider: React.FC = () => {
         }
     };
 
-    // Atualizando a categoria atual e sua contagem
     const currentCategory = products ? products.products[activeSlideIndex]?.category : '';
     const currentCategoryCount = currentCategory ? categoryCounts.get(currentCategory) ?? 0 : 0;
-
-    // Exibindo no formato desejado: (1) Botas
     const formattedCategoryDisplay = currentCategory ? `(${currentCategoryCount}) ${currentCategory}` : '';
 
     return (
@@ -99,12 +88,14 @@ const CartSlider: React.FC = () => {
                     onConfigClick={() => alert('Configurações')}
                     onPrev={() => navigateToCategory('prev')}
                     onNext={() => navigateToCategory('next')}
-                    currentCategory={formattedCategoryDisplay} // Exibindo a categoria formatada
-                    currentCategoryCount={currentCategoryCount} // Passando o número de itens
+                    currentCategory={formattedCategoryDisplay} 
+                    currentCategoryCount={currentCategoryCount}
                 />
             )}
 
             <StyledSwiper
+                lazy={true}
+                preloadImages={false} // Desabilita o carregamento automático de imagens
                 onSwiper={(swiperInstance: SwiperType) => {
                     swiperRef.current = swiperInstance;
                 }}
@@ -115,7 +106,7 @@ const CartSlider: React.FC = () => {
                         const currentCategory = products.products[swiper.activeIndex]?.category;
                         const categoryIndex = categories.indexOf(currentCategory || '');
                         if (categoryIndex !== -1 && categoryIndex !== activeCategoryIndex) {
-                            setActiveCategoryIndex(categoryIndex); // Sincroniza a categoria ativa
+                            setActiveCategoryIndex(categoryIndex);
                         }
                     }
                 }}
@@ -125,9 +116,12 @@ const CartSlider: React.FC = () => {
                 pagination={{ clickable: true }}
                 navigation
             >
-                {products?.products.map(product => (
+                {products?.products.map((product, index) => (
                     <SwiperSlide key={product.id}>
-                        <ProductCard product={product} />
+                        {/* Renderiza o ProductCard apenas quando o slide for ativo ou os próximos 2 */}
+                        {index >= activeSlideIndex - 1 && index <= activeSlideIndex + 1 ? (
+                            <ProductCard product={product} />
+                        ) : null}
                     </SwiperSlide>
                 ))}
             </StyledSwiper>
@@ -137,7 +131,6 @@ const CartSlider: React.FC = () => {
 
 export default CartSlider;
 
-// styles
 const StyledSwiper = styled(SwiperComponent)`
     width: 100%;
     height: 100%;
