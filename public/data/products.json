@@ -1,0 +1,828 @@
+{
+    "products": [
+        {
+            "id": 7058,
+            "name": "Mochila",
+            "reference": "67.15.6144",
+            "gender": "Masculino",
+            "category": "acessórios",
+            "subcategory": null,
+            "prompt_delivery": true,
+            "skus": [
+                {
+                    "id": 73279,
+                    "size": "G",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 4
+                },
+                {
+                    "id": 73280,
+                    "size": "GG",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 3
+                },
+                {
+                    "id": 73278,
+                    "size": "M",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 2
+                },
+                {
+                    "id": 73277,
+                    "size": "P",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 3
+                }
+            ],
+            "companies": {
+                "key": 2007
+            },
+            "brand": "Marca Moda",
+            "price": 22,
+            "colors": [],
+            "images": [
+                {
+                    "id": 34441,
+                    "order": 1,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/1100-1714656344873.jpg"
+                }
+            ]
+        },
+        {
+            "id": 7067,
+            "name": "Mochila",
+            "reference": "67.15.1340",
+            "gender": "Masculino",
+            "category": "acessórios",
+            "subcategory": null,
+            "prompt_delivery": true,
+            "skus": [
+                {
+                    "id": 73315,
+                    "size": "G",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 2
+                },
+                {
+                    "id": 73316,
+                    "size": "GG",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 4
+                },
+                {
+                    "id": 73314,
+                    "size": "M",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 1
+                },
+                {
+                    "id": 73313,
+                    "size": "P",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 5
+                }
+            ],
+            "companies": {
+                "key": 2007
+            },
+            "brand": "Marca Moda",
+            "price": 21,
+            "colors": [],
+            "images": [
+                {
+                    "id": 34443,
+                    "order": 1,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/1102-1714656377245.jpg"
+                }
+            ]
+        },
+        {
+            "id": 7072,
+            "name": "Mochila",
+            "reference": "67.15.7671",
+            "gender": "Masculino",
+            "category": "acessórios",
+            "subcategory": null,
+            "prompt_delivery": true,
+            "skus": [
+                {
+                    "id": 73354,
+                    "size": "G",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 5
+                },
+                {
+                    "id": 73355,
+                    "size": "GG",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 1
+                },
+                {
+                    "id": 73353,
+                    "size": "M",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 5
+                },
+                {
+                    "id": 73352,
+                    "size": "P",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 2
+                }
+            ],
+            "companies": {
+                "key": 2007
+            },
+            "brand": "Marca Moda",
+            "price": 59,
+            "colors": [],
+            "images": [
+                {
+                    "id": 34442,
+                    "order": 1,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/1101-1714656345010.jpg"
+                }
+            ]
+        },
+        {
+            "id": 56825,
+            "name": "Mochila Rosa",
+            "reference": "100BMG82",
+            "gender": "Unisex",
+            "category": "Acessórios",
+            "subcategory": null,
+            "prompt_delivery": true,
+            "description": "Mochila",
+            "deadline_id": 229,
+            "type": "NACIONAL",
+            "skus": [
+                {
+                    "id": 201065,
+                    "size": "UNICO",
+                    "stock": 100,
+                    "open_grid": false,
+                    "min_quantity": 1
+                }
+            ],
+            "companies": {
+                "key": 2007
+            },
+            "brand": "Marca Moda",
+            "price": 24,
+            "colors": [],
+            "images": [
+                {
+                    "id": 113772,
+                    "order": 1,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/2007-1724352589303.jpg"
+                },
+                {
+                    "id": 113773,
+                    "order": 2,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/2007-1724352589392.jpg"
+                },
+                {
+                    "id": 113774,
+                    "order": 3,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/2007-1724352589393.jpg"
+                }
+            ]
+        },
+        {
+            "id": 56826,
+            "name": "Mochila Amarela",
+            "reference": "100BMG83",
+            "gender": "Unisex",
+            "category": "Acessórios",
+            "subcategory": null,
+            "prompt_delivery": true,
+            "description": "Mochila",
+            "deadline_id": 229,
+            "type": "NACIONAL",
+            "skus": [
+                {
+                    "id": 201066,
+                    "size": "UNICO",
+                    "stock": 100,
+                    "open_grid": false,
+                    "min_quantity": 1
+                }
+            ],
+            "companies": {
+                "key": 2007
+            },
+            "brand": "Marca Moda",
+            "price": 24,
+            "colors": [],
+            "images": [
+                {
+                    "id": 113775,
+                    "order": 1,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/2007-1724352589397.jpg"
+                },
+                {
+                    "id": 113776,
+                    "order": 2,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/2007-1724352589446.jpg"
+                },
+                {
+                    "id": 113777,
+                    "order": 3,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/2007-1724352589451.jpg"
+                }
+            ]
+        },
+        {
+            "id": 7030,
+            "name": "Bermuda",
+            "reference": "67.15.4801",
+            "gender": "Masculino",
+            "category": "Bermudas",
+            "subcategory": "Lisa",
+            "prompt_delivery": true,
+            "skus": [
+                {
+                    "id": 73173,
+                    "size": "G",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 3
+                },
+                {
+                    "id": 73176,
+                    "size": "GG",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 3
+                },
+                {
+                    "id": 73171,
+                    "size": "M",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 5
+                },
+                {
+                    "id": 73175,
+                    "size": "P",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 1
+                }
+            ],
+            "companies": {
+                "key": 2007
+            },
+            "brand": "Marca Moda",
+            "price": 41,
+            "colors": [],
+            "images": [
+                {
+                    "id": 34444,
+                    "order": 1,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/9900-1714656378134.jpg"
+                }
+            ]
+        },
+        {
+            "id": 7033,
+            "name": "Bermuda",
+            "reference": "67.15.8065",
+            "gender": "Masculino",
+            "category": "Bermudas",
+            "subcategory": "Lisa",
+            "prompt_delivery": true,
+            "skus": [
+                {
+                    "id": 73179,
+                    "size": "G",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 1
+                },
+                {
+                    "id": 73180,
+                    "size": "GG",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 5
+                },
+                {
+                    "id": 73177,
+                    "size": "M",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 3
+                },
+                {
+                    "id": 73178,
+                    "size": "P",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 6
+                }
+            ],
+            "companies": {
+                "key": 2007
+            },
+            "brand": "Marca Moda",
+            "price": 34,
+            "colors": [],
+            "images": [
+                {
+                    "id": 34445,
+                    "order": 1,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/9901-1714656378140.jpg"
+                }
+            ]
+        },
+        {
+            "id": 7041,
+            "name": "Bermuda",
+            "reference": "67.15.8037",
+            "gender": "Masculino",
+            "category": "Bermudas",
+            "subcategory": "Estampada",
+            "prompt_delivery": true,
+            "skus": [
+                {
+                    "id": 73214,
+                    "size": "G",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 6
+                },
+                {
+                    "id": 73216,
+                    "size": "GG",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 3
+                },
+                {
+                    "id": 73215,
+                    "size": "M",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 6
+                },
+                {
+                    "id": 73213,
+                    "size": "P",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 3
+                }
+            ],
+            "companies": {
+                "key": 2007
+            },
+            "brand": "Marca Moda",
+            "price": 50,
+            "colors": [],
+            "images": [
+                {
+                    "id": 34410,
+                    "order": 1,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/203-1714656164834.jpg"
+                }
+            ]
+        },
+        {
+            "id": 7055,
+            "name": "Bermuda",
+            "reference": "67.15.5431",
+            "gender": "Masculino",
+            "category": "Bermudas",
+            "subcategory": "Lisa",
+            "prompt_delivery": true,
+            "skus": [
+                {
+                    "id": 73264,
+                    "size": "G",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 3
+                },
+                {
+                    "id": 73261,
+                    "size": "GG",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 4
+                },
+                {
+                    "id": 73263,
+                    "size": "M",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 3
+                },
+                {
+                    "id": 73262,
+                    "size": "P",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 1
+                }
+            ],
+            "companies": {
+                "key": 2007
+            },
+            "brand": "Marca Moda",
+            "price": 48,
+            "colors": [],
+            "images": [
+                {
+                    "id": 34446,
+                    "order": 1,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/9902-1714656378271.jpg"
+                }
+            ]
+        },
+        {
+            "id": 7066,
+            "name": "Bermuda",
+            "reference": "67.15.7671",
+            "gender": "Masculino",
+            "category": "Bermudas",
+            "subcategory": "Estampada",
+            "prompt_delivery": true,
+            "skus": [
+                {
+                    "id": 73311,
+                    "size": "G",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 6
+                },
+                {
+                    "id": 73312,
+                    "size": "GG",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 2
+                },
+                {
+                    "id": 73310,
+                    "size": "M",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 5
+                },
+                {
+                    "id": 73309,
+                    "size": "P",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 2
+                }
+            ],
+            "companies": {
+                "key": 2007
+            },
+            "brand": "Marca Moda",
+            "price": 37,
+            "colors": [],
+            "images": [
+                {
+                    "id": 34408,
+                    "order": 1,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/201-1714656164106.jpg"
+                }
+            ]
+        },
+        {
+            "id": 7069,
+            "name": "Bermuda",
+            "reference": "67.15.5937",
+            "gender": "Masculino",
+            "category": "Bermudas",
+            "subcategory": "Estampada",
+            "prompt_delivery": true,
+            "skus": [
+                {
+                    "id": 73323,
+                    "size": "G",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 4
+                },
+                {
+                    "id": 73324,
+                    "size": "GG",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 4
+                },
+                {
+                    "id": 73321,
+                    "size": "M",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 5
+                },
+                {
+                    "id": 73322,
+                    "size": "P",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 1
+                }
+            ],
+            "companies": {
+                "key": 2007
+            },
+            "brand": "Marca Moda",
+            "price": 33,
+            "colors": [],
+            "images": [
+                {
+                    "id": 34409,
+                    "order": 1,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/202-1714656164608.jpg"
+                }
+            ]
+        },
+        {
+            "id": 7071,
+            "name": "Bermuda",
+            "reference": "67.15.3602",
+            "gender": "Masculino",
+            "category": "Bermudas",
+            "subcategory": "Estampada",
+            "prompt_delivery": true,
+            "skus": [
+                {
+                    "id": 73334,
+                    "size": "G",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 4
+                },
+                {
+                    "id": 73335,
+                    "size": "GG",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 6
+                },
+                {
+                    "id": 73333,
+                    "size": "M",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 3
+                },
+                {
+                    "id": 73332,
+                    "size": "P",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 1
+                }
+            ],
+            "companies": {
+                "key": 2007
+            },
+            "brand": "Marca Moda",
+            "price": 37,
+            "colors": [],
+            "images": [
+                {
+                    "id": 34407,
+                    "order": 1,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/200-1714656148784.jpg"
+                }
+            ]
+        },
+        {
+            "id": 56837,
+            "name": "Bota branca",
+            "reference": "100BMG94",
+            "gender": "Masculino",
+            "category": "Bota",
+            "subcategory": null,
+            "prompt_delivery": true,
+            "description": "Bota",
+            "deadline_id": 229,
+            "type": "NACIONAL",
+            "skus": [
+                {
+                    "id": 201107,
+                    "size": "36",
+                    "stock": 100,
+                    "open_grid": false,
+                    "min_quantity": 1
+                },
+                {
+                    "id": 201108,
+                    "size": "37",
+                    "stock": 100,
+                    "open_grid": false,
+                    "min_quantity": 1
+                },
+                {
+                    "id": 201109,
+                    "size": "38",
+                    "stock": 100,
+                    "open_grid": false,
+                    "min_quantity": 1
+                },
+                {
+                    "id": 201110,
+                    "size": "39",
+                    "stock": 100,
+                    "open_grid": false,
+                    "min_quantity": 1
+                }
+            ],
+            "companies": {
+                "key": 2007
+            },
+            "brand": "Marca Moda",
+            "price": 19,
+            "colors": [],
+            "images": [
+                {
+                    "id": 113804,
+                    "order": 1,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/2007-1724352589883.jpg"
+                },
+                {
+                    "id": 113805,
+                    "order": 2,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/2007-1724352589928.jpg"
+                }
+            ]
+        },
+        {
+            "id": 7047,
+            "name": "Chinelo",
+            "reference": "67.15.4100",
+            "gender": "Masculino",
+            "category": "Chinelos",
+            "subcategory": null,
+            "prompt_delivery": true,
+            "skus": [
+                {
+                    "id": 73237,
+                    "size": "G",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 1
+                },
+                {
+                    "id": 73240,
+                    "size": "GG",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 5
+                },
+                {
+                    "id": 73239,
+                    "size": "M",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 3
+                },
+                {
+                    "id": 73238,
+                    "size": "P",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 3
+                }
+            ],
+            "companies": {
+                "key": 2007
+            },
+            "brand": "Marca Moda",
+            "price": 51,
+            "colors": [],
+            "images": [
+                {
+                    "id": 34421,
+                    "order": 1,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/502-1714656240931.jpg"
+                }
+            ]
+        },
+        {
+            "id": 7050,
+            "name": "Chinelo",
+            "reference": "67.15.2201",
+            "gender": "Masculino",
+            "category": "Chinelos",
+            "subcategory": null,
+            "prompt_delivery": true,
+            "skus": [
+                {
+                    "id": 73247,
+                    "size": "G",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 3
+                },
+                {
+                    "id": 73248,
+                    "size": "GG",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 5
+                },
+                {
+                    "id": 73246,
+                    "size": "M",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 5
+                },
+                {
+                    "id": 73245,
+                    "size": "P",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 6
+                }
+            ],
+            "companies": {
+                "key": 2007
+            },
+            "brand": "Marca Moda",
+            "price": 41,
+            "colors": [],
+            "images": [
+                {
+                    "id": 34423,
+                    "order": 1,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/504-1714656261691.jpg"
+                }
+            ]
+        },
+        {
+            "id": 7057,
+            "name": "Chinelo",
+            "reference": "67.15.8363",
+            "gender": "Masculino",
+            "category": "Chinelos",
+            "subcategory": null,
+            "prompt_delivery": true,
+            "skus": [
+                {
+                    "id": 73275,
+                    "size": "G",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 5
+                },
+                {
+                    "id": 73276,
+                    "size": "GG",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 5
+                },
+                {
+                    "id": 73274,
+                    "size": "M",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 6
+                },
+                {
+                    "id": 73273,
+                    "size": "P",
+                    "stock": 500,
+                    "open_grid": false,
+                    "min_quantity": 4
+                }
+            ],
+            "companies": {
+                "key": 2007
+            },
+            "brand": "Marca Moda",
+            "price": 43,
+            "colors": [],
+            "images": [
+                {
+                    "id": 34420,
+                    "order": 1,
+                    "path": "https://api.forca-de-vendas.integrador.e-catalogos.net/images/2007/501-1714656240893.jpg"
+                }
+            ]
+        }
+    ]
+}
