@@ -5,11 +5,12 @@ import CategorySlider from '../molecules/CategorySlider'; // Importando Category
 import ConfigBtn from '../atoms/ConfigBtn';
 
 interface AppHeaderProps {
-    onReturnClick?: () => void; // Função opcional para o botão de retorno
-    onConfigClick?: () => void; // Função opcional para o botão de configuração
-    onPrev: () => void; // Função para ação do botão "anterior"
-    onNext: () => void; // Função para ação do botão "próximo"
-    currentCategory: string; // Categoria atual do produto
+    onReturnClick: () => void;
+    onConfigClick: () => void;
+    onPrev: () => void;
+    onNext: () => void;
+    currentCategory: string;
+    currentCategoryCount: number; // Isso deve ser um número
 }
 
 // function

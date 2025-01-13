@@ -1,21 +1,20 @@
-// imports
 import { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 
-    // swiper
-    import { Navigation, A11y } from 'swiper/modules';
-    import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react';
-    import { Swiper as SwiperType } from 'swiper';
-    import 'swiper/css';
-    import 'swiper/css/navigation';
-    import 'swiper/css/pagination';
+// swiper
+import { Navigation, A11y } from 'swiper/modules';
+import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react';
+import { Swiper as SwiperType } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-    // components
-    import AppHeader from './AppHeader';
-    import ProductCard from './ProductCard';
+// components
+import AppHeader from './AppHeader';
+import ProductCard from './ProductCard';
 
-    // types
-    import { ProductData } from '../../types/types';
+// types
+import { ProductData } from '../../types/types';
 
 // function
 const CartSlider: React.FC = () => {
@@ -25,6 +24,9 @@ const CartSlider: React.FC = () => {
 
     const [activeCategoryIndex, setActiveCategoryIndex] = useState<number>(0); // active index
     const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0);
+
+    // Contagem de itens por categoria
+    const [categoryCounts, setCategoryCounts] = useState<Map<string, number>>(new Map());
 
     // swiper ref
     const swiperRef = useRef<SwiperType | null>(null);
@@ -39,6 +41,13 @@ const CartSlider: React.FC = () => {
                 }
                 const data: ProductData = await response.json();
                 setProducts(data);
+
+                // Contagem de itens por categoria
+                const counts = new Map<string, number>();
+                data.products.forEach(product => {
+                    counts.set(product.category, (counts.get(product.category) || 0) + 1);
+                });
+                setCategoryCounts(counts);
             } catch (err) {
                 if (err instanceof Error) {
                     setError(err.message);
@@ -50,34 +59,36 @@ const CartSlider: React.FC = () => {
         fetchData();
     }, []);
 
-    // extracting product's categoryes
+    // Extraindo categorias dos produtos
     const categories = products ? Array.from(new Set(products.products.map(product => product.category))) : [];
 
-    // navigation between categories
+    // Navegação entre as categorias com comportamento cíclico
     const navigateToCategory = (direction: 'prev' | 'next') => {
         if (!products || !swiperRef.current) return;
-    
-        // Calcula o novo índice da categoria
+
         const newIndex =
             direction === 'prev'
-                ? Math.max(activeCategoryIndex - 1, 0)
-                : Math.min(activeCategoryIndex + 1, categories.length - 1);
-    
+                ? (activeCategoryIndex - 1 + categories.length) % categories.length // Navegação cíclica para "Anterior"
+                : (activeCategoryIndex + 1) % categories.length; // Navegação cíclica para "Próxima"
+
         if (newIndex !== activeCategoryIndex) {
             const newCategory = categories[newIndex];
-    
-            // Localiza o índice do primeiro produto da nova categoria
-            const firstItemIndex = products.products.findIndex(
-                product => product.category === newCategory
-            );
-    
+            const firstItemIndex = products.products.findIndex(product => product.category === newCategory);
+
             if (firstItemIndex !== -1) {
-                setActiveCategoryIndex(newIndex); // Atualiza a categoria ativa
-                swiperRef.current.slideTo(firstItemIndex); // Navega para o primeiro produto da nova categoria
+                setActiveCategoryIndex(newIndex);
+                swiperRef.current.slideTo(firstItemIndex);
             }
         }
-    };    
-    
+    };
+
+    // Atualizando a categoria atual e sua contagem
+    const currentCategory = products ? products.products[activeSlideIndex]?.category : '';
+    const currentCategoryCount = currentCategory ? categoryCounts.get(currentCategory) ?? 0 : 0;
+
+    // Exibindo no formato desejado: (1) Botas
+    const formattedCategoryDisplay = currentCategory ? `(${currentCategoryCount}) ${currentCategory}` : '';
+
     return (
         <>
             {error && <p>Error: {error}</p>}
@@ -88,7 +99,8 @@ const CartSlider: React.FC = () => {
                     onConfigClick={() => alert('Configurações')}
                     onPrev={() => navigateToCategory('prev')}
                     onNext={() => navigateToCategory('next')}
-                    currentCategory={products.products[activeSlideIndex]?.category || ''}
+                    currentCategory={formattedCategoryDisplay} // Exibindo a categoria formatada
+                    currentCategoryCount={currentCategoryCount} // Passando o número de itens
                 />
             )}
 
@@ -135,7 +147,6 @@ const StyledSwiper = styled(SwiperComponent)`
         width: 28px;
         height: 28px;
         overflow: hidden;
-
         padding: 10px;
         color: #809CAA;
         background-color: #809CAA;
@@ -143,7 +154,7 @@ const StyledSwiper = styled(SwiperComponent)`
     }
 
     .swiper-button-next::after,
-    .swiper-button-prev::after{
+    .swiper-button-prev::after {
         content: '';
         width: 28px;
         height: 28px;
@@ -151,7 +162,8 @@ const StyledSwiper = styled(SwiperComponent)`
         position: absolute;
         background-image: url('/images/swiper-btn-icon.svg');
     }
-    .swiper-button-prev::after{
+
+    .swiper-button-prev::after {
         transform: rotate(180deg);
     }
 `;
