@@ -31,5 +31,8 @@ const ProductImageWrapper = styled.img`
     @media (max-width: 375px){
       max-width: 30dvh;
     }
-
+    
+    @media(max-width: 350px){
+      max-height: 45dvh;
+    }
 `
