@@ -41,14 +41,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onInfoClick, onSearc
     };
 
     const handleRemove = () => {
-        if(PackQuantity === 0){
+        if (PackQuantity === 0) {
             setCartValue(prev => prev - product.price);
         }
         if (addedQuantity > 0) {
             setAddedQuantity(prev => prev - 1);
             setCartValue(prev => prev - PackValue);
         }
-    };
+    };    
 
     return (
         <ProductCardWrapper>
