@@ -1,7 +1,7 @@
 // imports
 import styled from 'styled-components'
 
-import categoryIconSvg from '/images/categoryIcon.svg'
+import categoryIconSvg from '/images/category-changer-btn-icon.svg'
 
 interface CategoryBtnProps {
     goTo: 'prev' | 'next'

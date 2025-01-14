@@ -1,12 +1,12 @@
 // imports
-import styled from 'styled-components';
-import CategoryBtn from '../atoms/CategoryBtn';
-import CategoryText from '../atoms/CategoryText';
+import styled from 'styled-components'
+import CategoryBtn from '../atoms/CategoryBtn'
+import CategoryText from '../atoms/CategoryText'
 
 interface CategorySliderProps {
-    onPrev: () => void; // Função para ação do botão "anterior"
-    onNext: () => void; // Função para ação do botão "próximo"
-    currentCategory: string; // Categoria atual do produto
+    onPrev: () => void;
+    onNext: () => void;
+    currentCategory: string;
 }
 
 // function
@@ -14,10 +14,10 @@ export default function CategorySlider({ onPrev, onNext, currentCategory }: Cate
     return (
         <CategorySliderWrapper>
             <CategoryBtn goTo='prev' onClick={onPrev} />
-              <CategoryText text={currentCategory} /> {/* Exibe a categoria atual */}
+              <CategoryText text={currentCategory} /> {/* shows current category */}
             <CategoryBtn goTo='next' onClick={onNext} />
         </CategorySliderWrapper>
-    );
+    )
 }
 
 // styles
@@ -26,4 +26,4 @@ const CategorySliderWrapper = styled.div`
     justify-content: center;
     align-items: center;
     gap: 12px;
-`;
+`

@@ -9,7 +9,9 @@ interface ConfigBtnProps{
 export default function ConfigBtn( { onClick } : ConfigBtnProps) {
   return (
     <ConfigBtnWrapper onClick={onClick}>
-        F
+        <span>
+          F
+        </span>
     </ConfigBtnWrapper>
   )
 }

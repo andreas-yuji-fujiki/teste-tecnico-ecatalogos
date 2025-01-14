@@ -1,6 +1,6 @@
 // imports
 import styled from 'styled-components'
-import ReturnSvg from '/images/return.svg'
+import ReturnSvg from '/images/return-btn-icon.svg'
 
 interface ReturnButtonProps {
     onClick: (event: React.MouseEvent<HTMLButtonElement>) => void

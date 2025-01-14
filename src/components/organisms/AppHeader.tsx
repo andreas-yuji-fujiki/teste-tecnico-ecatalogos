@@ -1,8 +1,9 @@
 // imports
-import styled from 'styled-components';
-import ReturnButton from '../atoms/ReturnButton';
-import CategorySlider from '../molecules/CategorySlider'; // Importando CategorySlider
-import ConfigBtn from '../atoms/ConfigBtn';
+import styled from 'styled-components'
+
+import ReturnButton from '../atoms/ReturnButton'
+import CategorySlider from '../molecules/CategorySlider'
+import ConfigBtn from '../atoms/ConfigBtn'
 
 interface AppHeaderProps {
     onReturnClick: () => void;
@@ -10,7 +11,7 @@ interface AppHeaderProps {
     onPrev: () => void;
     onNext: () => void;
     currentCategory: string;
-    currentCategoryCount: number; // Isso deve ser um número
+    currentCategoryCount: number;
 }
 
 // function
@@ -31,11 +32,13 @@ export default function AppHeader({
             />
             <ConfigBtn onClick={onConfigClick || (() => alert('Clicou.'))} />
         </AppHeaderWrapper>
-    );
+    )
 }
 
 // styles
 const AppHeaderWrapper = styled.header`
+    width: 100%;
+    z-index: 1;
     padding: 9px 26px;
     
     display: flex;
@@ -43,4 +46,4 @@ const AppHeaderWrapper = styled.header`
     align-items: center;
     
     background-color: #809caa;
-`;
+`

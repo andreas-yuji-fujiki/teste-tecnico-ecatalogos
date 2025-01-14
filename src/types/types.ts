@@ -1,4 +1,3 @@
-// types.ts
 export interface SKU {
     id: number;
     size: string;
@@ -17,11 +16,16 @@ export interface Image {
     path: string;
 }
 
+type Gender = 'Masculino' | 'Feminino' | 'Unissex';
+
 export interface Product {
     id: number;
     name: string;
+
+    ref?: string;
+
     reference: string;
-    gender: string;
+    gender: Gender;
     category: string;
     subcategory: string | null;
     prompt_delivery: boolean;
@@ -35,4 +39,8 @@ export interface Product {
 
 export interface ProductData {
     products: Product[];
+    totalCount: number;
+    page: number;
+    limit: number;
 }
+
