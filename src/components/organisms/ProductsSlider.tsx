@@ -222,8 +222,6 @@ const StyledSwiper = styled(SwiperComponent)`
     width: 100%;
     height: 100%;
 
-    display: block;
-
     .swiper-button-next,
     .swiper-button-prev {
         width: 28px;

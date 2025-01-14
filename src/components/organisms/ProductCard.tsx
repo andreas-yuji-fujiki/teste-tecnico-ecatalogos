@@ -32,23 +32,25 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onInfoClick, onSearc
 
     const handleAdd = () => {
         setAddedQuantity(prev => prev + 1);
-
-        if(PackQuantity === 0){
-            setCartValue(prev => prev + product.price)
-        }else{
-            setCartValue(prev => prev + PackValue);
+    
+        if (PackQuantity === 0) {
+            setCartValue(prev => prev + product.price); // Adiciona o valor de product.price se PackQuantity for 0
+        } else {
+            setCartValue(prev => prev + PackValue); // Caso contrário, adiciona o valor de PackValue
         }
     };
-
+    
     const handleRemove = () => {
-        if (PackQuantity === 0) {
-            setCartValue(prev => prev - product.price);
-        }
         if (addedQuantity > 0) {
             setAddedQuantity(prev => prev - 1);
-            setCartValue(prev => prev - PackValue);
+    
+            if (PackQuantity === 0) {
+                setCartValue(prev => prev - product.price); // Subtrai product.price se PackQuantity for 0
+            } else {
+                setCartValue(prev => prev - PackValue); // Caso contrário, subtrai PackValue
+            }
         }
-    };    
+    };
 
     return (
         <ProductCardWrapper>
