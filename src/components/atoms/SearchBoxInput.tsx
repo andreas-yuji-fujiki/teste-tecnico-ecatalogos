@@ -23,7 +23,7 @@ export default function SearchBoxInput({ placeholder, value, onChange }: SearchB
 
 // styles
 const SearchBoxInputWrapper = styled.input`
-    width: 80%;
+    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;

@@ -23,20 +23,20 @@ export default Thumbnail;
 
 // styles
 const StyledThumbnail = styled.img<{ isSelected: boolean }>`
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
     cursor: pointer;
     border: 2px solid transparent;
     transition: border 0.3s;
 
     &:hover {
-        border: 2px solid #007bff;
+        border: 1px solid #5da0ad;
     }
 
     ${({ isSelected }) =>
         isSelected &&
         `
-        border: 2px solid #007bff;
+        border: 1px solid #5da0ad;
     `}
 `

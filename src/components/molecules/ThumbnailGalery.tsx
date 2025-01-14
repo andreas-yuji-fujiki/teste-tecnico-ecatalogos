@@ -1,10 +1,11 @@
+// imports
 import React from 'react';
 import styled from 'styled-components';
 import Thumbnail from '../atoms/Thumbnail';
 
 interface Image {
-    id: number; // Alterando para number
-    path: string;
+    id: number
+    path: string
 }
 
 interface ThumbnailGalleryProps {
@@ -13,12 +14,13 @@ interface ThumbnailGalleryProps {
     onImageClick: (imagePath: string) => void;
 }
 
+// function
 const ThumbnailGallery: React.FC<ThumbnailGalleryProps> = ({ images, currentImage, onImageClick }) => {
     return (
         <StyledImageGallery>
             {images.map(image => (
                 <Thumbnail
-                    key={image.id} // Agora funciona com id do tipo number
+                    key={image.id}
                     src={image.path}
                     alt=""
                     onClick={() => onImageClick(image.path)}
@@ -33,7 +35,4 @@ export default ThumbnailGallery;
 
 const StyledImageGallery = styled.div`
     display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 10px;
 `

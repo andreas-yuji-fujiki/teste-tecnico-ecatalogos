@@ -17,10 +17,10 @@ export default function ProductSearchBtn( { onClick } : SearchBtnProps) {
 // styles
 const ProductSearchBtnWrapper = styled.button`
   display: flex;
-  width: 32px;
-  height: 32px;
+  width: 35px;
+  height: 35px;
 
-  & img{
-    flex: 1;
+  img{
+    width: 100%;
   }
 `

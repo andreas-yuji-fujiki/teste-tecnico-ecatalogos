@@ -15,4 +15,12 @@ export default function ProductInfoBtn( { onClick } : OptionsBtnProps) {
 }
 
 // styles
-const ProductInfoBtnWrapper = styled.button``
+const ProductInfoBtnWrapper = styled.button`
+  display: flex;
+  width: 35px;
+  height: 35px;
+
+  img{
+    width: 100%;
+  }
+`

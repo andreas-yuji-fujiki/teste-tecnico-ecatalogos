@@ -2,6 +2,8 @@
 import styled from 'styled-components'
 import { Product } from '../../types/types'
 
+import CloseIconSvg from '/images/close-btn-icon.svg'
+
 interface ProductInfoCardProps {
   product: Product;
   onClose: () => void; // close modal function
@@ -12,12 +14,22 @@ export default function ProductInfoCard({ product, onClose }: ProductInfoCardPro
   return (
     <ProductInfoCardWrapper onClick={onClose}>
       <InfoCard onClick={(e) => e.stopPropagation()}>
-        <CloseButton onClick={onClose}>X</CloseButton>
-        <p><strong>Nome do produto:</strong> {product.name}</p>
-        <p><strong>Referência:</strong> {product.reference}</p>
-        <p><strong>Marca:</strong> {product.brand}</p>
-        <p><strong>Categoria:</strong> {product.category}</p>
-        <p><strong>Gênero:</strong> {product.gender}</p>
+        <InfoHeader>
+          <InfoHeaderTitle>
+            Informações
+          </InfoHeaderTitle>
+          <CloseButton onClick={onClose}>
+            <img src={CloseIconSvg} alt="Fechar" />
+          </CloseButton>
+        </InfoHeader>
+
+        <AboutProduct>
+          <p><strong>Nome do produto:</strong> {product.name}</p>
+          <p><strong>Referência:</strong> {product.reference}</p>
+          <p><strong>Marca:</strong> {product.brand}</p>
+          <p><strong>Categoria:</strong> {product.category}</p>
+          <p><strong>Gênero:</strong> {product.gender}</p>
+        </AboutProduct>
       </InfoCard>
     </ProductInfoCardWrapper>
   )
@@ -39,19 +51,28 @@ const ProductInfoCardWrapper = styled.div`
 `
 
 const InfoCard = styled.div`
+  position: relative;
   background-color: white;
-  padding: 20px;
   width: 90%;
   max-width: 500px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: relative;
+`
+
+const InfoHeader = styled.header`
+  background-color: #809caa;
+  padding: 8px 20px;
+`
+const InfoHeaderTitle = styled.h3`
+  text-align: center;
+  font-weight: 300;
+  font-size: 20px;
+  padding: 8px 0;
+  color: #fff;
 `
 
 const CloseButton = styled.button`
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 5px;
+  right: 5px;
   background: none;
   border: none;
   font-size: 18px;
@@ -61,4 +82,11 @@ const CloseButton = styled.button`
   &:hover {
     color: #f00;
   }
+`
+
+const AboutProduct = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
 `

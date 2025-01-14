@@ -1,29 +1,26 @@
-// imports
 import { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
 
-    // swiper
-    import { Navigation, A11y } from 'swiper/modules'
-    import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react'
-    import { Swiper as SwiperType } from 'swiper'
+// swiper
+import { Navigation, A11y } from 'swiper/modules'
+import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react'
+import { Swiper as SwiperType } from 'swiper'
 
-    import 'swiper/css'
-    import 'swiper/css/navigation'
-    import 'swiper/css/pagination'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
-    // components
-    import AppHeader from './AppHeader'
-    import ProductCard from './ProductCard'
-    import ProductInfoCard from '../molecules/ProductInfoCard'
+// components
+import AppHeader from './AppHeader'
+import ProductCard from './ProductCard'
+import ProductInfoCard from '../molecules/ProductInfoCard'
 
-    import SearchCard from '../molecules/SearchCard'
+import SearchCard from '../molecules/SearchCard'
 
-    // types
-    import { Product, ProductData } from '../../types/types'
+// types
+import { Product, ProductData } from '../../types/types'
 
-// function
 const ProductsSlider: React.FC = () => {
-    // states
     const [error, setError] = useState<string | null>(null)
     const [products, setProducts] = useState<ProductData | null>(null)
     const [searchRef, setSearchRef] = useState<string>('')
@@ -37,44 +34,63 @@ const ProductsSlider: React.FC = () => {
     // product info card state
     const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
 
-    // searchbox visibiliby state
+    // searchbox visibility state
     const [isSearchVisible, setIsSearchVisible] = useState<boolean>(false)
+
+    // State to handle dynamic height
+    const [sliderHeight, setSliderHeight] = useState<number>(0)
 
     const showProductInfo = (product: Product) => {
         setSelectedProduct(product)
-    };
+    }
 
     const hideProductInfo = () => {
         setSelectedProduct(null)
-    };
+    }
 
     const showSearchBox = () => {
         setIsSearchVisible(true)
-    };
+    }
 
     const hideSearchBox = () => {
         setIsSearchVisible(false)
-    };
+    }
 
-    // search logic
     const handleSearch = () => {
         if (products && searchRef) {
             const searchRefString = String(searchRef)
-    
-            const productIndex = products.products.findIndex(product => {
+
+            const productIndex = products.products.findIndex((product) => {
                 return String(product.reference) === searchRefString
-            });
-    
+            })
+
             if (productIndex !== -1) {
-                swiperRef.current?.slideTo(productIndex);
-                hideSearchBox();
+                swiperRef.current?.slideTo(productIndex)
+                hideSearchBox()
             } else {
                 alert('Produto não encontrado!')
             }
         }
     }
-    
-    
+
+    useEffect(() => {
+        // Set dynamic height for the slider based on window height minus the header height
+        const updateHeight = () => {
+            const headerHeight = 45
+            setSliderHeight(window.innerHeight - headerHeight)
+        }
+
+        // Initial height setup
+        updateHeight()
+
+        // Listen for window resize
+        window.addEventListener('resize', updateHeight)
+
+        // Cleanup the event listener when the component is unmounted
+        return () => {
+            window.removeEventListener('resize', updateHeight)
+        }
+    }, [])
 
     useEffect(() => {
         const fetchData = async () => {
@@ -86,24 +102,23 @@ const ProductsSlider: React.FC = () => {
                 const data: ProductData = await response.json()
                 setProducts(data)
 
-                const counts = new Map<string, number>();
-                data.products.forEach(product => {
+                const counts = new Map<string, number>()
+                data.products.forEach((product) => {
                     counts.set(product.category, (counts.get(product.category) || 0) + 1)
-                });
+                })
                 setCategoryCounts(counts)
             } catch (err) {
                 if (err instanceof Error) {
                     setError(err.message)
                 } else {
-                    setError('Erro desconhecido! ( X-X WTF?! )')
+                    setError('Erro desconhecido!')
                 }
             }
-        };
+        }
         fetchData()
     }, [])
 
-    // categories list
-    const categories = products ? Array.from(new Set(products.products.map(product => product.category))) : []
+    const categories = products ? Array.from(new Set(products.products.map((product) => product.category))) : []
 
     const navigateToCategory = (direction: 'prev' | 'next') => {
         if (!products || !swiperRef.current) return
@@ -115,21 +130,21 @@ const ProductsSlider: React.FC = () => {
 
         if (newIndex !== activeCategoryIndex) {
             const newCategory = categories[newIndex]
-            const firstItemIndex = products.products.findIndex(product => product.category === newCategory)
+            const firstItemIndex = products.products.findIndex((product) => product.category === newCategory)
 
             if (firstItemIndex !== -1) {
                 setActiveCategoryIndex(newIndex)
                 swiperRef.current.slideTo(firstItemIndex)
             }
         }
-    };
+    }
 
     const currentCategory = products ? products.products[activeSlideIndex]?.category : ''
     const currentCategoryCount = currentCategory ? categoryCounts.get(currentCategory) ?? 0 : 0
     const formattedCategoryDisplay = currentCategory ? `(${currentCategoryCount}) ${currentCategory}` : ''
 
     return (
-        <ProductsSliderWrapper>
+        <ProductsSliderWrapper style={{ height: `${sliderHeight}px` }}>
             {error && <p>Error: {error}</p>}
 
             {products && (
@@ -144,8 +159,6 @@ const ProductsSlider: React.FC = () => {
             )}
 
             <StyledSwiper
-                lazy
-                preloadImages={false}
                 onSwiper={(swiperInstance: SwiperType) => {
                     swiperRef.current = swiperInstance
                 }}
@@ -160,7 +173,7 @@ const ProductsSlider: React.FC = () => {
                         }
                     }
                 }}
-                spaceBetween={900}
+                spaceBetween={1200}
                 slidesPerView={1}
                 speed={300}
                 touchRatio={1.5}
@@ -169,37 +182,33 @@ const ProductsSlider: React.FC = () => {
                 pagination={{ clickable: true }}
                 navigation
             >
-                {products?.products.map((product, index) => (
+                {products?.products.map((product) => (
                     <StyledSlide key={product.id}>
-                        {index >= activeSlideIndex - 1 && index <= activeSlideIndex + 1 ? (
-                            <ProductCard 
-                                product={product} 
-                                onInfoClick={() => showProductInfo(product)} 
-                                onSearchClick={showSearchBox} 
-                            />
-                        ) : null}
+                        <ProductCard
+                            product={product}
+                            onInfoClick={() => showProductInfo(product)}
+                            onSearchClick={showSearchBox}
+                        />
                     </StyledSlide>
                 ))}
             </StyledSwiper>
 
-
-            {selectedProduct && (
-                <ProductInfoCard product={selectedProduct} onClose={hideProductInfo} />
-            )}
+            {selectedProduct && <ProductInfoCard product={selectedProduct} onClose={hideProductInfo} />}
 
             {isSearchVisible && (
-                <SearchCard 
-                    searchRef={searchRef} 
-                    setSearchRef={setSearchRef} 
-                    onSearch={handleSearch} 
+                <SearchCard
+                    searchRef={searchRef}
+                    setSearchRef={setSearchRef}
+                    onSearch={handleSearch}
+                    onClose={hideSearchBox}
                 />
             )}
         </ProductsSliderWrapper>
-    );
-};
+    )
+}
+
 export default ProductsSlider
 
-// styles
 const ProductsSliderWrapper = styled.div``
 
 const StyledSlide = styled(SwiperSlide)`
@@ -209,19 +218,20 @@ const StyledSlide = styled(SwiperSlide)`
 
 const StyledSwiper = styled(SwiperComponent)`
     position: relative;
-    display: block;
     z-index: 1;
-    width: 96%;
+    width: 100%;
     height: 100%;
+
+    display: block;
 
     .swiper-button-next,
     .swiper-button-prev {
         width: 28px;
         height: 28px;
         overflow: hidden;
-        
-        color: #809CAA;
-        background-color: #809CAA;
+
+        color: #809caa;
+        background-color: #809caa;
         border-radius: 100%;
     }
 

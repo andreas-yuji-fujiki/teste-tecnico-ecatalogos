@@ -18,10 +18,14 @@ const ProductPageWrapper = styled.div`
     z-index: 1;
     width: 600px;
     height: 100dvh;
-    max-height: 100vh;
+    max-height: 100dvh;
     
     margin: 0 auto;
-    border: 2px solid #000;
+    border: 2px solid #809caa;
     border-top: none;
     border-bottom: none;
+
+    @media (max-width: 900px){
+      width: 100%;
+    }
 `

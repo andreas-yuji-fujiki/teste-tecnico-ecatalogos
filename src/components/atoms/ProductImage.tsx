@@ -15,7 +15,20 @@ export default function ProductImage( { src, alt } : ProductImageProps) {
 
 // styles
 const ProductImageWrapper = styled.img`
-    width: 100%;
     object-fit: contain;
-    max-height: 55dvh;
+    max-height: 69dvh;
+    height: 100%;
+
+    @media (max-height: 945px){
+      max-height: 65dvh;
+    }
+
+    @media (max-height: 930px){
+      max-height: 50dvh;
+    }
+
+    @media (max-width: 375px){
+      max-width: 30dvh;
+    }
+
 `
