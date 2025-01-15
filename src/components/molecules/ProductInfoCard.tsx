@@ -6,7 +6,7 @@ import CloseIconSvg from '/images/close-btn-icon.svg'
 
 interface ProductInfoCardProps {
   product: Product;
-  onClose: () => void; // close modal function
+  onClose: () => void;
 }
 
 // function

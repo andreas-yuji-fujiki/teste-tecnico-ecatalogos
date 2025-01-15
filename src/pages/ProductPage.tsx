@@ -19,6 +19,7 @@ const ProductPageWrapper = styled.div`
     width: 600px;
     height: 100dvh;
     max-height: 100dvh;
+    overflow-y: hidden;
     
     margin: 0 auto;
     border: 2px solid #809caa;

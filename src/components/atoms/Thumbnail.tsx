@@ -15,14 +15,14 @@ const Thumbnail: React.FC<ThumbnailProps> = ({ src, alt, onClick, isSelected }) 
             src={src} 
             alt={alt} 
             onClick={onClick} 
-            isSelected={isSelected} 
+            $isSelected={isSelected}
         />
     )
 }
 export default Thumbnail;
 
 // styles
-const StyledThumbnail = styled.img<{ isSelected: boolean }>`
+const StyledThumbnail = styled.img<{ $isSelected: boolean }>`
     width: 44px;
     height: 44px;
     object-fit: contain;
@@ -34,8 +34,8 @@ const StyledThumbnail = styled.img<{ isSelected: boolean }>`
         border: 1px solid #5da0ad;
     }
 
-    ${({ isSelected }) =>
-        isSelected &&
+    ${({ $isSelected }) =>
+        $isSelected &&
         `
         border: 1px solid #5da0ad;
     `}

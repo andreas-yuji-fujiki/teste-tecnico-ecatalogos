@@ -6,7 +6,7 @@ interface OptionsBtnProps{
 }
 
 // function
-export default function ProductInfoBtn( { onClick } : OptionsBtnProps) {
+export default function ProductInfoBtn({ onClick }: OptionsBtnProps) {
   return (
     <ProductInfoBtnWrapper onClick={onClick}>
         <img src="/images/info-btn-icon.svg" alt="Informações do produto" />
