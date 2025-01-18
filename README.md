@@ -20,7 +20,9 @@ Follow these steps:
 
 1- Clone:
 ```git clone https://github.com/andreas-yuji-fujiki/teste-tecnico-ecatalogos-react```
+
 2- Install deps:
 ```npm install```
+
 3- Run:
 ```npm run dev```
