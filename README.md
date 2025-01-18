@@ -16,6 +16,13 @@ Technical test project for e-Catalogos using **React** and **TypeScript**.
 
 ## How to Use?
 
-Feel free to clone the project:
-```bash
-git clone https://github.com/your-username/teste-tecnico-ecatalogos.git
+Folow this steps:
+
+1- Clone:
+```git clone https://github.com/your-username/teste-tecnico-ecatalogos.git```
+
+2- Install deps:
+```npm install```
+
+3- Run:
+```npm run dev```
